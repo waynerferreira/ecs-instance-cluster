@@ -26,6 +26,6 @@ data "aws_ssm_parameter" "subnet_private_1c" {
   name = var.ssm_private_subnet_3
 }
 
-data "aws_launch_template" "qd_lt" {
+data "aws_launch_template" "wf_lt" {
   name = var.environment == "dev" ? "lt-ecs-base" : "ecs-base-prod"
 }

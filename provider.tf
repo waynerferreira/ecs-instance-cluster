@@ -11,7 +11,7 @@ provider "vault" {
 data "vault_aws_access_credentials" "creds" {
   type    = "sts"
   backend = "waynerferreira"
-  role    = var.environment == "prod" ? "queima-adm" : format("queima-adm-%s", var.environment)
+  role    = var.environment == "prod" ? "wayner-adm" : format("wayner-adm-%s", var.environment)
 }
 
 provider "aws" {
@@ -35,7 +35,7 @@ terraform {
     # The name of your Terraform Cloud organization.
     organization = "waynerferreira"
     workspaces {
-      prefix = "qd-ecs-infra-b-"
+      prefix = "wf-ecs-infra-b-"
     }
   }
 }

@@ -55,7 +55,7 @@ data "aws_iam_policy_document" "app_ecs_assume_role" {
 
 data "aws_iam_policy_document" "ec2_ecs_scalling_role" {
   statement {
-    sid    = "ECSServiceQueima"
+    sid    = "ECSServiceWayner"
     effect = "Allow"
     actions = [
       "ecs:DescribeServices",

@@ -1,5 +1,5 @@
 resource "aws_autoscaling_group" "spots" {
-  name_prefix = format("qd-spots-%s-%s", var.env, var.environment)
+  name_prefix = format("wf-spots-%s-%s", var.env, var.environment)
 
   vpc_zone_identifier = [
     data.aws_ssm_parameter.subnet_private_1a.value,
@@ -37,7 +37,7 @@ resource "aws_autoscaling_group" "spots" {
 }
 
 resource "aws_ecs_capacity_provider" "spots" {
-  name = format("qd-spots-%s-%s", var.env, var.environment)
+  name = format("wf-spots-%s-%s", var.env, var.environment)
 
   auto_scaling_group_provider {
     auto_scaling_group_arn = aws_autoscaling_group.spots.arn
